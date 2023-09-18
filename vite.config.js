@@ -7,7 +7,9 @@ import legacy from '@vitejs/plugin-legacy'
 export default defineConfig({
   root: resolve('./src'),
   base: '/',
-  plugins: [svelte()],
+  plugins: [
+	  svelte(), 
+	  legacy({ targets: ['defaults', 'not IE 11']})],
   build: {
     manifest: true,
     outDir: resolve('./dist'),
